@@ -8,6 +8,7 @@ import './App.css';
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
 import AppLayout from './layouts/AppLayout';
+import Admin from './layouts/Admin';
 // Views 
 import Home from './views/Home';
 import Dashboard from './views/Dashboard';
@@ -38,7 +39,7 @@ const App = () => {
       children={() => (
         <Switch>
           <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
-          <AppRoute exact path="/dashboard" component={Dashboard} layout={AppLayout} />
+          <AppRoute exact path="/dashboard" component={Admin} />
         </Switch>
       )} />
   );
