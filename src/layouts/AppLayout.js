@@ -4,6 +4,8 @@ import Footer from '../components/layout/Footer';
 import Home from '../views/Home';
 import Sidebar from '../components/Sidebar/Sidebar';
 
+import routes from '../routes';
+
 const AppLayout = ({ children }) => {
   const [signupModalActive, setSignupModalActive] = useState(false);
   const [loginModalActive, setLoginModalActive] = useState(false);
@@ -14,12 +16,8 @@ const AppLayout = ({ children }) => {
       <Sidebar
         routes={routes}
         logoText={"Creative Tim"}
-        logo={logo}
-        image={image}
-        handleDrawerToggle={handleDrawerToggle}
-        open={mobileOpen}
-        color={color}
-        {...rest}
+        handleDrawerToggle={() => alert('Toggle pressed')}
+        open={() => alert('Opened')}
       />
       {children}
       </main>
