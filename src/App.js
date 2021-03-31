@@ -7,9 +7,11 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 // Layouts
 import LayoutDefault from './layouts/LayoutDefault';
+import AppLayout from './layouts/AppLayout';
 // Views 
 import Home from './views/Home';
 import Dashboard from './views/Dashboard';
+import * as Dashboard2 from './'
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -37,7 +39,7 @@ const App = () => {
       children={() => (
         <Switch>
           <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
-          <AppRoute exact path="/dashboard" component={Dashboard} />
+          <AppRoute exact path="/dashboard" component={Dashboard} layout={AppLayout} />
         </Switch>
       )} />
   );
