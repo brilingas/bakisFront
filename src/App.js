@@ -11,7 +11,6 @@ import AppLayout from './layouts/AppLayout';
 // Views 
 import Home from './views/Home';
 import Dashboard from './views/Dashboard';
-import * as Dashboard2 from './'
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
