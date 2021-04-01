@@ -15,7 +15,7 @@ const AppLayout = ({ children }) => {
       <main className="site-content">
       <Sidebar
         routes={routes}
-        logoText={"Creative Tim"}
+        logoText={"APPLAYOUT component"}
         handleDrawerToggle={() => alert('Toggle pressed')}
         open={() => alert('Opened')}
       />
