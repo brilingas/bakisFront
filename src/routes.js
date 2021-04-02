@@ -6,11 +6,10 @@ import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
 import Unarchive from "@material-ui/icons/Unarchive";
 import Language from "@material-ui/icons/Language";
-
 import DashboardPage from "./views/Dashboard/Dashboard.js";
 import UserProfile from "./views/PersonProfile/PersonProfile.js";
 import TableList from "./views/TableList/TableList.js";
-import PersonList from "./views/PersonList/PersonList";
+import PersonList from "./views/PersonsList/PersonsList";
 import Typography from "./views/Typography/Typography.js";
 import Icons from "./views/Icons/Icons.js";
 import Maps from "./views/Maps/Maps.js";

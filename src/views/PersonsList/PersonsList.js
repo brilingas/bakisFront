@@ -39,7 +39,7 @@ const styles = {
 
 const useStyles = makeStyles(styles);
 
-export default function PersonList() {
+export default function PersonsList() {
   const classes = useStyles();
   return (
     <GridContainer>

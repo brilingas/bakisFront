@@ -17,7 +17,7 @@ import Typography from './views/Typography/Typography';
 import Maps from './views/Maps/Maps';
 import Icons from './views/Icons/Icons';
 import NotificationsPage from './views/Notifications/Notifications';
-import PersonList from './views/PersonList/PersonList';
+import PersonList from './views/PersonsList/PersonsList';
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
 
