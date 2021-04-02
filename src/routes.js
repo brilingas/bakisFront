@@ -57,14 +57,6 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/maps",
-    name: "Maps",
-    rtlName: "خرائط",
-    icon: LocationOn,
-    component: Maps,
-    layout: "/admin"
-  },
-  {
     path: "/notifications",
     name: "Notifications",
     rtlName: "إخطارات",

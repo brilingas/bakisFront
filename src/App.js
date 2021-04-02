@@ -46,8 +46,6 @@ const App = () => {
           <AppRoute exact path="/admin/table" component={TableList} layout={Admin} />
           <AppRoute exact path="/admin/typography" component={Typography} layout={Admin} />
           <AppRoute exact path="/admin/icons" component={Icons} layout={Admin} />
-          <AppRoute exact path="/admin/maps" component={Maps} layout={Admin} />
-          <AppRoute exact path="/admin/notifications" component={NotificationsPage} layout={Admin} />
 
           {/* <Redirect from="/" to="/admin/dashboard"/> */}
         </Switch>
