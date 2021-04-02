@@ -8,42 +8,54 @@ import Unarchive from "@material-ui/icons/Unarchive";
 import Language from "@material-ui/icons/Language";
 
 import DashboardPage from "./views/Dashboard/Dashboard.js";
-import UserProfile from "./views/UserProfile/UserProfile.js";
+import UserProfile from "./views/PersonProfile/PersonProfile.js";
 import TableList from "./views/TableList/TableList.js";
+import PersonList from "./views/PersonList/PersonList";
 import Typography from "./views/Typography/Typography.js";
 import Icons from "./views/Icons/Icons.js";
 import Maps from "./views/Maps/Maps.js";
 import NotificationsPage from "./views/Notifications/Notifications.js";
+import LocationProfile from "./views/LocationProfile/LocationProfile.js";
 
 const dashboardRoutes = [
   {
     path: "/dashboard",
     name: "Dashboard",
-    rtlName: "لوحة القيادة",
     icon: Dashboard,
     component: DashboardPage,
     layout: "/admin"
   },
   {
-    path: "/user",
-    name: "User Profile",
-    rtlName: "ملف تعريفي للمستخدم",
+    path: "/person",
+    name: "Person Profile",
     icon: Person,
     component: UserProfile,
     layout: "/admin"
   },
   {
+    path: "/location",
+    name: "Location Profile",
+    icon: Person,
+    component: LocationProfile,
+    layout: "/admin"
+  },
+  {
     path: "/table",
     name: "Table List",
-    rtlName: "قائمة الجدول",
     icon: "content_paste",
     component: TableList,
     layout: "/admin"
   },
   {
+    path: "/persons",
+    name: "Persons List",
+    icon: "content_paste",
+    component: PersonList,
+    layout: "/admin"
+  },
+  {
     path: "/typography",
     name: "Typography",
-    rtlName: "طباعة",
     icon: LibraryBooks,
     component: Typography,
     layout: "/admin"
@@ -51,7 +63,6 @@ const dashboardRoutes = [
   {
     path: "/icons",
     name: "Icons",
-    rtlName: "الرموز",
     icon: BubbleChart,
     component: Icons,
     layout: "/admin"
@@ -59,11 +70,9 @@ const dashboardRoutes = [
   {
     path: "/notifications",
     name: "Notifications",
-    rtlName: "إخطارات",
     icon: Notifications,
     component: NotificationsPage,
     layout: "/admin"
   }
 ];
-
 export default dashboardRoutes;
