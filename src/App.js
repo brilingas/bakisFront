@@ -17,7 +17,10 @@ import Typography from './views/Typography/Typography';
 import Maps from './views/Maps/Maps';
 import Icons from './views/Icons/Icons';
 import NotificationsPage from './views/Notifications/Notifications';
-import PersonList from './views/PersonsList/PersonsList';
+import PersonsList from './views/PersonsList/PersonsList';
+import LocationsList from './views/LocationsList/LocationsList';
+import CardsList from './views/CardsList/CardsList';
+import CardProfile from './views/CardProfile/CardProfile';
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
 
@@ -44,10 +47,17 @@ const App = () => {
         <Switch>
           <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
           <AppRoute exact path="/admin/dashboard" component={Dashboard} layout={Admin}/>
+
           <AppRoute exact path="/admin/person" component={PersonProfile} layout={Admin} />
-          <AppRoute exact path="/admin/persons" component={PersonList} layout={Admin} />
+          <AppRoute exact path="/admin/persons" component={PersonsList} layout={Admin} />
+
           <AppRoute exact path="/admin/location" component={LocationProfile} layout={Admin} />
-          <AppRoute exact path="/admin/table" component={TableList} layout={Admin} />
+          <AppRoute exact path="/admin/locations" component={LocationsList} layout={Admin} />
+
+          <AppRoute exact path="/admin/card" component={CardProfile} layout={Admin} />
+          <AppRoute exact path="/admin/cards" component={CardsList} layout={Admin} />
+
+          <AppRoute exact path="/admin/tables" component={TableList} layout={Admin} />
           <AppRoute exact path="/admin/typography" component={Typography} layout={Admin} />
           <AppRoute exact path="/admin/icons" component={Icons} layout={Admin} />
 
