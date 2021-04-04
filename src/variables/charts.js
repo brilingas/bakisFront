@@ -1,6 +1,3 @@
-// ##############################
-// // // javascript library for creating charts
-// #############################
 var Chartist = require("chartist");
 
 // ##############################
@@ -10,11 +7,6 @@ var delays = 80,
   durations = 500;
 var delays2 = 80,
   durations2 = 500;
-
-// ##############################
-// // // Daily Sales
-// #############################
-
 const dailySalesChart = {
   data: {
     labels: ["M", "T", "W", "T", "F", "S", "S"],
@@ -64,11 +56,6 @@ const dailySalesChart = {
     }
   }
 };
-
-// ##############################
-// // // Email Subscriptions
-// #############################
-
 const emailsSubscriptionChart = {
   data: {
     labels: [
@@ -76,7 +63,7 @@ const emailsSubscriptionChart = {
       "Feb",
       "Mar",
       "Apr",
-      "Mai",
+      "May",
       "Jun",
       "Jul",
       "Aug",
@@ -129,11 +116,6 @@ const emailsSubscriptionChart = {
     }
   }
 };
-
-// ##############################
-// // // Completed Tasks
-// #############################
-
 const completedTasksChart = {
   data: {
     labels: ["12am", "3pm", "6pm", "9pm", "12pm", "3am", "6am", "9am"],

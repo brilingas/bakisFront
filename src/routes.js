@@ -10,9 +10,7 @@ import DashboardPage from "./views/Dashboard/Dashboard.js";
 import PersonProfile from "./views/PersonProfile/PersonProfile.js";
 import TableList from "./views/TableList/TableList.js";
 import PersonsList from "./views/PersonsList/PersonsList";
-import Typography from "./views/Typography/Typography.js";
 import Icons from "./views/Icons/Icons.js";
-import Maps from "./views/Maps/Maps.js";
 import NotificationsPage from "./views/Notifications/Notifications.js";
 import LocationProfile from "./views/LocationProfile/LocationProfile.js";
 import LocationsList from "./views/LocationsList/LocationsList.js";
@@ -37,7 +35,7 @@ const dashboardRoutes = [
   },
   {
     path: "/persons",
-    name: "Persons List",
+    name: "Persons",
     icon: People,
     component: PersonsList,
     layout: "/admin"
@@ -51,7 +49,7 @@ const dashboardRoutes = [
   },
   {
     path: "/locations",
-    name: "Locations List",
+    name: "Locations",
     icon: HomeWork,
     component: LocationsList,
     layout: "/admin"
@@ -64,22 +62,9 @@ const dashboardRoutes = [
   },
   {
     path: "/cards",
-    name: "Cards List",
+    name: "Cards",
     icon: RecentActors,
     component: CardsList,
-    layout: "/admin"
-  },
-  {
-    path: "/typography",
-    name: "Typography",
-    icon: LibraryBooks,
-    component: Typography,
-    layout: "/admin"
-  }, {
-    path: "/tables",
-    name: "Table List",
-    icon: "content_paste",
-    component: TableList,
     layout: "/admin"
   }
 ];

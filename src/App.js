@@ -6,17 +6,13 @@ import ReactGA from 'react-ga';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import LayoutDefault from './layouts/LayoutDefault';
-import AppLayout from './layouts/AppLayout';
 import Admin from './layouts/Admin';
 import Home from './views/Home';
 import Dashboard from './views/Dashboard/Dashboard';
 import PersonProfile from './views/PersonProfile/PersonProfile';
 import LocationProfile from './views/LocationProfile/LocationProfile';
 import TableList from './views/TableList/TableList';
-import Typography from './views/Typography/Typography';
-import Maps from './views/Maps/Maps';
 import Icons from './views/Icons/Icons';
-import NotificationsPage from './views/Notifications/Notifications';
 import PersonsList from './views/PersonsList/PersonsList';
 import LocationsList from './views/LocationsList/LocationsList';
 import CardsList from './views/CardsList/CardsList';
@@ -57,9 +53,6 @@ const App = () => {
           <AppRoute exact path="/admin/card" component={CardProfile} layout={Admin} />
           <AppRoute exact path="/admin/cards" component={CardsList} layout={Admin} />
 
-          <AppRoute exact path="/admin/tables" component={TableList} layout={Admin} />
-          <AppRoute exact path="/admin/typography" component={Typography} layout={Admin} />
-          <AppRoute exact path="/admin/icons" component={Icons} layout={Admin} />
 
           {/* <Redirect from="/" to="/admin/dashboard"/> */}
         </Switch>
