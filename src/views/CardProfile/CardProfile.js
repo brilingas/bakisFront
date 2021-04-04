@@ -40,15 +40,15 @@ export default function CardProfile() {
         <GridItem xs={12} sm={12} md={8}>
           <Card>
             <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>Create Location</h4>
+              <h4 className={classes.cardTitleWhite}>Create Card</h4>
               <p className={classes.cardCategoryWhite}/>
             </CardHeader>
             <CardBody>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={3}>
                   <CustomInput
-                    labelText="Country"
-                    id="country"
+                    labelText="Valid From"
+                    id="valid-from"
                     formControlProps={{
                       fullWidth: true
                     }}
@@ -56,8 +56,26 @@ export default function CardProfile() {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={3}>
                   <CustomInput
-                    labelText="City"
-                    id="city"
+                    labelText="Valid To"
+                    id="valid-to"
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                  />
+                </GridItem>
+                  <GridItem xs={12} sm={12} md={3}>
+                    <CustomInput
+                      labelText="Location"
+                      id="location"
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                    />
+                  </GridItem>
+                <GridItem xs={12} sm={12} md={3}>
+                  <CustomInput
+                    labelText="Card Type"
+                    id="card-type"
                     formControlProps={{
                       fullWidth: true
                     }}
@@ -65,62 +83,8 @@ export default function CardProfile() {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={3}>
                   <CustomInput
-                    labelText="Street"
-                    id="street"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Building number"
-                    id="building-number"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Apartment number"
-                    id="apartment-number"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Location name"
-                    id="location-name"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Contact person"
-                    id="contact-person"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Status"
-                    id="status"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Type"
-                    id="type"
+                    labelText="Card Availability"
+                    id="card-availability"
                     formControlProps={{
                       fullWidth: true
                     }}
