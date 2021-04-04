@@ -265,7 +265,7 @@ const buttonStyle = {
   },
   transparent: {
     "&,&:focus,&:hover": {
-      color: "inherit",
+      color: "white",
       background: "transparent",
       boxShadow: "none"
     }

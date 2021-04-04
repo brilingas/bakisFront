@@ -122,7 +122,7 @@ export default function Dashboard() {
                 tabContent: (
                   <Tasks
                     checkedIndexes={[0, 3]}
-                    tasksIndexes={[0, 1, 2, 3]}
+                    tasksIndexes={[0, 1, 2]}
                     tasks={issues}
                   />
                 )
@@ -143,7 +143,7 @@ export default function Dashboard() {
                 tabIcon: Today,
                 tabContent: (
                   <Tasks
-                    checkedIndexes={[1]}
+                    checkedIndexes={[1,2]}
                     tasksIndexes={[0, 1, 2]}
                     tasks={events}
                   />

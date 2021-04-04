@@ -23,11 +23,6 @@ const hexToRgb = input => {
     parseInt(last, 16)
   );
 };
-
-// ##############################
-// // // Variables - Styles that are used on more than one component
-// #############################
-
 const drawerWidth = 260;
 
 const transition = {
