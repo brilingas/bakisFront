@@ -37,59 +37,71 @@ export default function LocationProfile() {
   return (
     <div>
       <GridContainer>
-        <GridItem xs={12} sm={12} md={8}>
+        <GridItem xs={12} sm={12} md={12}>
           <Card>
             <CardHeader color="primary">
               <h4 className={classes.cardTitleWhite}>Create Location</h4>
-              <p className={classes.cardCategoryWhite}/>
             </CardHeader>
             <CardBody>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Country"
-                    id="country"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="City"
-                    id="city"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Street"
-                    id="street"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Building number"
-                    id="building-number"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Apartment number"
-                    id="apartment-number"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
+               <GridContainer>
+                  <GridItem xs={12} sm={12} md={10}>
+                    <Card>
+                      <CardHeader color="rose">
+                        <h4 className={classes.cardTitleWhite}>Address</h4>
+                      </CardHeader>
+                      <CardBody>
+                        <GridContainer>
+                        <GridItem xs={12} sm={12} md={2}>
+                              <CustomInput
+                                labelText="Country"
+                                id="country"
+                                formControlProps={{
+                                  fullWidth: true
+                                }}
+                              />
+                            </GridItem>
+                            <GridItem xs={12} sm={12} md={2}>
+                              <CustomInput
+                                labelText="City"
+                                id="city"
+                                formControlProps={{
+                                  fullWidth: true
+                                }}
+                              />
+                            </GridItem>
+                            <GridItem xs={12} sm={12} md={2}>
+                              <CustomInput
+                                labelText="Street"
+                                id="street"
+                                formControlProps={{
+                                  fullWidth: true
+                                }}
+                              />
+                            </GridItem>
+                            <GridItem xs={12} sm={12} md={2}>
+                              <CustomInput
+                                labelText="Building number"
+                                id="building-number"
+                                formControlProps={{
+                                  fullWidth: true
+                                }}
+                              />
+                            </GridItem>
+                            <GridItem xs={12} sm={12} md={2}>
+                              <CustomInput
+                                labelText="Apartment number"
+                                id="apartment-number"
+                                formControlProps={{
+                                  fullWidth: true
+                                }}
+                              />
+                            </GridItem>
+                        </GridContainer>
+                      </CardBody>
+                    </Card>
+                  </GridItem>
+               </GridContainer>
+               <GridContainer>
                 <GridItem xs={12} sm={12} md={3}>
                   <CustomInput
                     labelText="Location name"
@@ -108,7 +120,7 @@ export default function LocationProfile() {
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
+                <GridItem xs={12} sm={12} md={2}>
                   <CustomInput
                     labelText="Status"
                     id="status"
@@ -117,7 +129,7 @@ export default function LocationProfile() {
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
+                <GridItem xs={12} sm={12} md={2}>
                   <CustomInput
                     labelText="Type"
                     id="type"
@@ -126,7 +138,7 @@ export default function LocationProfile() {
                     }}
                   />
                 </GridItem>
-              </GridContainer>
+                </GridContainer>
             </CardBody>
             <CardFooter>
               <Button color="primary">Save</Button>

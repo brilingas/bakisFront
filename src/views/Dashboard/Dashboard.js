@@ -2,7 +2,7 @@ import React from "react";
 import ChartistGraph from "react-chartist";
 import { makeStyles } from "@material-ui/core/styles";
 import Icon from "@material-ui/core/Icon";
-import Store from "@material-ui/icons/Store";
+import Event from "@material-ui/icons/Event";
 import Warning from "@material-ui/icons/Warning";
 import DateRange from "@material-ui/icons/DateRange";
 import LocalOffer from "@material-ui/icons/LocalOffer";
@@ -33,6 +33,7 @@ import {
   completedTasksChart
 } from "../../variables/charts.js";
 import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
+import { LocationCity } from "@material-ui/icons";
 
 const useStyles = makeStyles(styles);
 
@@ -48,19 +49,15 @@ export default function Dashboard() {
               <CardIcon color="warning">
                 <FileCopy/>
               </CardIcon>
-              <p className={classes.cardCategory}>Used Space</p>
+              <p className={classes.cardCategory}>Total Cards</p>
               <h3 className={classes.cardTitle}>
-                49/50 <small>GB</small>
+                49/50
               </h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
-                <Danger>
-                  <Warning />
-                </Danger>
-                <a href="#pablo" onClick={e => e.preventDefault()}>
-                  Get more space
-                </a>
+                <LocalOffer />
+                Tracked from Github
               </div>
             </CardFooter>
           </Card>
@@ -69,10 +66,10 @@ export default function Dashboard() {
           <Card>
             <CardHeader color="success" stats icon>
               <CardIcon color="success">
-                <Store />
+                <LocationCity />
               </CardIcon>
-              <p className={classes.cardCategory}>Revenue</p>
-              <h3 className={classes.cardTitle}>$34,245</h3>
+              <p className={classes.cardCategory}>Total Locations</p>
+              <h3 className={classes.cardTitle}>999</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -88,7 +85,7 @@ export default function Dashboard() {
               <CardIcon color="danger">
                 <Info/>
               </CardIcon>
-              <p className={classes.cardCategory}>Fixed Issues</p>
+              <p className={classes.cardCategory}>Total Persons</p>
               <h3 className={classes.cardTitle}>75</h3>
             </CardHeader>
             <CardFooter stats>
@@ -103,10 +100,10 @@ export default function Dashboard() {
           <Card>
             <CardHeader color="info" stats icon>
               <CardIcon color="info">
-                <Accessibility />
+                <Event />
               </CardIcon>
-              <p className={classes.cardCategory}>Followers</p>
-              <h3 className={classes.cardTitle}>+245</h3>
+              <p className={classes.cardCategory}>Total Events</p>
+              <h3 className={classes.cardTitle}>245</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
