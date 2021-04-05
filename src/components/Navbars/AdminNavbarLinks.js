@@ -120,18 +120,6 @@ export default function AdminNavbarLinks() {
                     >
                       You{"'"}re now friend with Andrew
                     </MenuItem>
-                    <MenuItem
-                      onClick={handleCloseNotification}
-                      className={classes.dropdownItem}
-                    >
-                      Another Notification
-                    </MenuItem>
-                    <MenuItem
-                      onClick={handleCloseNotification}
-                      className={classes.dropdownItem}
-                    >
-                      Another One
-                    </MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
