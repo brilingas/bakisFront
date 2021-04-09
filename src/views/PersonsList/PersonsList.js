@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import classnames from "classnames";
 import GridItem from "../../components/Grid/GridItem.js";
@@ -7,7 +8,6 @@ import Table from "../../components/Table/Table.js";
 import Card from "../../components/Card/Card.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardBody from "../../components/Card/CardBody.js";
-import Checkbox from "@material-ui/core/Checkbox";
 import Tooltip from "@material-ui/core/Tooltip";
 import IconButton from "@material-ui/core/IconButton";
 import TableRow from "@material-ui/core/TableRow";
@@ -16,6 +16,7 @@ import TableCell from "@material-ui/core/TableCell";
 import Edit from "@material-ui/icons/Edit";
 import Close from "@material-ui/icons/Close";
 import Check from "@material-ui/icons/Check";
+import axios from "axios";
 const styles = {
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {
@@ -46,82 +47,47 @@ const styles = {
   }
 };
 const useStyles = makeStyles(styles);
+const API_URL = "http://localhost:8080/persons";
 
-export default function PersonsList(props) {
+export default function PersonsList() {
   const classes = useStyles();
-  const [checked, setChecked] = React.useState([...props.checkedIndexes]);
-  const handleToggle = value => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-    setChecked(newChecked);
-  };
-  const { personsIndexes, persons} = props;
-  const tableCellClasses = classnames(classes.tableCell, {
-    [classes.tableCellRTL]: rtlActive
-  });
+  //const { personsIndexes, persons} = props;//get from somewhere else
+  const tableCellClasses = classnames(classes.tableCell);
+  const [persons,setPersons]=useState([]);
+
+  const getPersons=async()=>{
+    await axios.get(API_URL)
+    .then((response)=>{
+      console.log(response.data)
+    });
+  }
+  useEffect(() => {
+    getPersons();
+  }, []);
+
   return (
-    <Table className={classes.table}>
-      <TableBody>
-        {personsIndexes.map(value => (
-          <TableRow key={value} className={classes.tableRow}>
-            <TableCell className={tableCellClasses}>
-              <Checkbox
-                checked={checked.indexOf(value) !== -1}
-                tabIndex={-1}
-                onClick={() => handleToggle(value)}
-                checkedIcon={<Check className={classes.checkedIcon} />}
-                icon={<Check className={classes.uncheckedIcon} />}
-                classes={{
-                  checked: classes.checked,
-                  root: classes.root
-                }}
-              />
-            </TableCell>
-            <TableCell className={tableCellClasses}>{persons[value]}</TableCell>
-            <TableCell className={classes.tableActions}>
-              <Tooltip
-                id="tooltip-top"
-                title="Edit Task"
-                placement="top"
-                classes={{ tooltip: classes.tooltip }}
-                >
-                <IconButton
-                  aria-label="Edit"
-                  className={classes.tableActionButton}
-                >
-                  <Edit
-                    className={
-                      classes.tableActionButtonIcon + " " + classes.edit
-                    }
-                  />
-                </IconButton>
-              </Tooltip>
-              <Tooltip
-                id="tooltip-top-start"
-                title="Remove"
-                placement="top"
-                classes={{ tooltip: classes.tooltip }}
-              >
-                <IconButton
-                  aria-label="Close"
-                  className={classes.tableActionButton}
-                >
-                  <Close
-                    className={
-                      classes.tableActionButtonIcon + " " + classes.close
-                    }
-                  />
-                </IconButton>
-              </Tooltip>
-            </TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+    <GridContainer>
+      <GridItem xs={12} sm={12} md={12}>
+        <Card>
+          <CardHeader color="primary">
+            <h4 className={classes.cardTitleWhite}>Persons</h4>
+          </CardHeader>
+          <CardBody>
+            <Table
+              tableHeaderColor="primary"
+              tableHead={["Name", "Surname", "Birthday", "Phone Number", "Email", "Photo", "Signature", "Address", "Gender"]}
+              tableData={[
+                ["Dakota Rice", "Johnson", "1998-08-08", "+37089632045", "test@gmail.com","photo","signature","Gedimino g. 9, Vilnius, Lithuania", "FEMALE"]
+              ]}
+            />
+          </CardBody>
+        </Card>
+      </GridItem>
+    </GridContainer>
   );
 }
+PersonsList.propTypes = {
+  personsIndexes: PropTypes.arrayOf(PropTypes.number),
+  persons: PropTypes.arrayOf(PropTypes.node),
+  checkedIndexes: PropTypes.array
+};

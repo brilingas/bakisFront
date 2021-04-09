@@ -45,7 +45,7 @@ const App = () => {
           <AppRoute exact path="/admin/dashboard" component={Dashboard} layout={Admin}/>
 
           <AppRoute exact path="/admin/person" component={PersonProfile} layout={Admin} />
-          <AppRoute exact path="/admin/persons" component={PersonsList} layout={Admin} />
+          <AppRoute exact path="/admin/persons" component={PersonsList } layout={Admin} />
 
           <AppRoute exact path="/admin/location" component={LocationProfile} layout={Admin} />
           <AppRoute exact path="/admin/locations" component={LocationsList} layout={Admin} />
