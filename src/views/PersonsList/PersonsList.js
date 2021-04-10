@@ -73,7 +73,18 @@ export default function PersonsList() {
             <Table
               tableHeaderColor="primary"
               tableHead={["Name", "Surname", "Birthday", "Phone Number", "Email", "Photo", "Signature", "Address", "Gender"]}
-              tableData={persons}
+              tableData={persons.map((person)=>({
+                address:`${person.address.street}, ${person.address.buildingNumber}, ${person.address.apartmentNumber}, ${person.address.city}, ${person.address.country}`,
+                birthday:person.birthday,
+                email:person.email,
+                gender:person.gender,
+                id:person.id,
+                name:person.name,
+                phoneNumber:person.phoneNumber,
+                photo:person.photo,
+                signature:person.signature,
+                surname:person.surname
+              }))}
             />
           </CardBody>
         </Card>
