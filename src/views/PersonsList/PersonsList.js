@@ -48,23 +48,20 @@ const styles = {
 };
 const useStyles = makeStyles(styles);
 const API_URL = "http://localhost:8080/persons";
-
 export default function PersonsList() {
   const classes = useStyles();
-  //const { personsIndexes, persons} = props;//get from somewhere else
   const tableCellClasses = classnames(classes.tableCell);
   const [persons,setPersons]=useState([]);
-
   const getPersons=async()=>{
     await axios.get(API_URL)
     .then((response)=>{
-      console.log(response.data)
+      setPersons(response.data)
     });
   }
   useEffect(() => {
     getPersons();
-  }, []);
-
+  }, []);  
+  console.log(persons);
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
@@ -76,14 +73,12 @@ export default function PersonsList() {
             <Table
               tableHeaderColor="primary"
               tableHead={["Name", "Surname", "Birthday", "Phone Number", "Email", "Photo", "Signature", "Address", "Gender"]}
-              tableData={[
-                ["Dakota Rice", "Johnson", "1998-08-08", "+37089632045", "test@gmail.com","photo","signature","Gedimino g. 9, Vilnius, Lithuania", "FEMALE"]
-              ]}
+              tableData={persons}
             />
           </CardBody>
         </Card>
       </GridItem>
-    </GridContainer>
+    </GridContainer>    
   );
 }
 PersonsList.propTypes = {
