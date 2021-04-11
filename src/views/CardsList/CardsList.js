@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import GridItem from "../../components/Grid/GridItem.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
@@ -6,6 +6,9 @@ import Table from "../../components/Table/Table.js";
 import Card from "../../components/Card/Card.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardBody from "../../components/Card/CardBody.js";
+import classnames from "classnames";
+import axios from "axios";
+
 
 const styles = {
   cardCategoryWhite: {
@@ -38,9 +41,21 @@ const styles = {
 };
 
 const useStyles = makeStyles(styles);
-
+const API_URL = "http://localhost:8080/cards";
 export default function CardsList() {
   const classes = useStyles();
+  const tableCellClasses = classnames(classes.tableCell);
+  const [cards,setCards]=useState([]);
+  const getCards=async()=>{
+    await axios.get(API_URL)
+    .then((response)=>{
+      setCards(response.data)
+    });
+  }
+  useEffect(() => {
+    getCards();
+  }, []);  
+  console.log(cards[0]);
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
@@ -52,14 +67,13 @@ export default function CardsList() {
             <Table
               tableHeaderColor="primary"
               tableHead={["Valid From", "Valid To", "Location", "Card Type", "Card Availability"]}
-              tableData={[
-                ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
-                ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
-                ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
-                ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
-                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-                ["Mason Porter", "Chile", "Gloucester", "$78,615"]
-              ]}
+              tableData={cards.map((card)=>({
+                validFrom:card.validFrom,
+                validTo:card.validTo,
+                location:card.locationId,
+                cardType:card.cardType,
+                cardAvailability:card.cardAvailability
+              }))}
             />
           </CardBody>
         </Card>

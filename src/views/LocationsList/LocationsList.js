@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import GridItem from "../../components/Grid/GridItem.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
@@ -6,7 +6,8 @@ import Table from "../../components/Table/Table.js";
 import Card from "../../components/Card/Card.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardBody from "../../components/Card/CardBody.js";
-
+import classnames from "classnames";
+import axios from "axios";
 const styles = {
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {
@@ -38,9 +39,21 @@ const styles = {
 };
 
 const useStyles = makeStyles(styles);
-
+const API_URL = "http://localhost:8080/locations";
 export default function LocationsList() {
   const classes = useStyles();
+  const tableCellClasses = classnames(classes.tableCell);
+  const [locations,setLocations]=useState([]);
+  const getLocations=async()=>{
+    await axios.get(API_URL)
+    .then((response)=>{
+      setLocations(response.data)
+    });
+  }
+  useEffect(() => {
+    getLocations();
+  }, []);  
+  console.log(locations);
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
@@ -51,15 +64,15 @@ export default function LocationsList() {
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["Address", "Location Name", "Contact Person", "Status", "Type"]}
-              tableData={[
-                ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
-                ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
-                ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
-                ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
-                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-                ["Mason Porter", "Chile", "Gloucester", "$78,615"]
-              ]}
+              tableHead={["Location Name", "Address", "Status", "Type", "Contact Person"]}
+              tableData={locations.map((location)=>({
+                name:location.name,
+                address:`${location.address.street}, ${location.address.buildingNumber}, ${location.address.apartmentNumber}, ${location.address.city}, ${location.address.country}`,       
+                status:location.status,
+                type:location.type,
+                contactPerson:location.contactPerson
+                
+              }))}
             />
           </CardBody>
         </Card>
