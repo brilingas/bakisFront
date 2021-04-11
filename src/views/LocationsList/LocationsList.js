@@ -67,7 +67,7 @@ export default function LocationsList() {
               tableHead={["Location Name", "Address", "Status", "Type", "Contact Person"]}
               tableData={locations.map((location)=>({
                 name:location.name,
-                address:`${location.address.street}, ${location.address.buildingNumber}, ${location.address.apartmentNumber}, ${location.address.city}, ${location.address.country}`,       
+                address:`${location.address.street}, ${location.address.buildingNumber}-${location.address.apartmentNumber}, ${location.address.city}, ${location.address.country}`,       
                 status:location.status,
                 type:location.type,
                 contactPerson:location.contactPerson

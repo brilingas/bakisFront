@@ -15,7 +15,7 @@ export default function Footer(props) {
   return (
     <footer className={classes.footer}>
       <div className={classes.container}>
-        <div className={classes.left}>
+        <div className={classes.right}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a href="#home" className={classes.block}>
@@ -25,16 +25,6 @@ export default function Footer(props) {
             <ListItem className={classes.inlineBlock}>
               <a href="#company" className={classes.block}>
                 Company
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="#portfolio" className={classes.block}>
-                Portfolio
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="#blog" className={classes.block}>
-                Blog
               </a>
             </ListItem>
           </List>

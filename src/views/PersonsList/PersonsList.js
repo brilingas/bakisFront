@@ -81,7 +81,7 @@ export default function PersonsList() {
                 email:person.email,
                 photo:person.photo,
                 signature:person.signature,
-                address:`${person.address.street}, ${person.address.buildingNumber}, ${person.address.apartmentNumber}, ${person.address.city}, ${person.address.country}`,
+                address:`${person.address.street}, ${person.address.buildingNumber}-${person.address.apartmentNumber}, ${person.address.city}, ${person.address.country}`,
                 gender:person.gender
               }))}
             />
