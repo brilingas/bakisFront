@@ -76,7 +76,7 @@ export default function PersonsList() {
               tableData={persons.map((person)=>({
                 name:person.name,
                 surname:person.surname,
-                birthday:person.birthday,
+                birthday:person.birthday.split('T')[0],
                 phoneNumber:person.phoneNumber,
                 email:person.email,
                 photo:person.photo,

@@ -33,13 +33,13 @@ export default function CustomTable(props) {
           </TableHead>
         ) : null}
         <TableBody>
-          {tableData.map((person, key) => {
+          {tableData.map((tableEntity, key) => {
             return (
               <TableRow key={key} className={classes.tableBodyRow}>
-                {Object.keys(person).map((personKey, key) => {
+                {Object.keys(tableEntity).map((tableEntityKey, key) => {
                   return (
                     <TableCell className={classes.tableCell} key={key}>
-                      {person[personKey]}
+                      {tableEntity[tableEntityKey].toString()}
                     </TableCell>
                   );
                 })}

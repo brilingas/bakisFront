@@ -68,8 +68,8 @@ export default function CardsList() {
               tableHeaderColor="primary"
               tableHead={["Valid From", "Valid To", "Location", "Card Type", "Card Availability"]}
               tableData={cards.map((card)=>({
-                validFrom:card.validFrom.slice(0,10),
-                validTo:card.validTo,
+                validFrom:card.validFrom.split('.')[0].replace("T"," "),
+                validTo:card.validTo.split('.')[0].replace("T"," "),
                 location:card.locationId,
                 cardType:card.cardType,
                 cardAvailability:card.cardAvailability
