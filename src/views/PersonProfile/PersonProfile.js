@@ -30,17 +30,16 @@ const styles = {
     textDecoration: "none"
   }
 };
-
 const useStyles = makeStyles(styles);
 const API_URL = "http://localhost:8080/persons";
 export default function PersonProfile() {
   const classes = useStyles();
   const [person, setPerson] =useState({});
-    const handleSubmit = (event) => {
-    event.preventDefault();   
-    alert("person name:"+person.name+"address:"+person.address.country);
-    axios.post(`http://localhost:8080/workers/login`,person)
-      .then((response) => {
+  const handleSubmit = (event) => {
+  event.preventDefault();   
+  alert("address country:"+person.address.country);
+  axios.post(API_URL,person)
+       .then((response) => {
         console.log(response.data);
       })
   }
@@ -121,7 +120,7 @@ export default function PersonProfile() {
                     formControlProps={{
                       fullWidth: true
                     }}
-                    onChange={(event)=> setPerson({...person, photo: event.target.value})}
+                    onChange={(event)=> setPerson({...person, signature: event.target.value})}
                   />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={1}>
@@ -149,7 +148,7 @@ export default function PersonProfile() {
                                 formControlProps={{
                                   fullWidth: true
                                 }}
-                                onChange={(event)=> setPerson({...person.address,country:event.target.value})}
+                                onChange={(event)=> setPerson({...person, address: { ...person.address, country: event.target.value } })}   
                               />
                             </GridItem>
                             <GridItem xs={12} sm={12} md={2}>
@@ -159,7 +158,7 @@ export default function PersonProfile() {
                                 formControlProps={{
                                   fullWidth: true
                                 }}
-                                onChange={(event)=> setPerson({...person.address,city:event.target.value})}
+                                onChange={(event)=> setPerson({...person, address: { ...person.address, city: event.target.value } })}   
                               />
                             </GridItem>
                             <GridItem xs={12} sm={12} md={2}>
@@ -169,7 +168,7 @@ export default function PersonProfile() {
                                 formControlProps={{
                                   fullWidth: true
                                 }}
-                                onChange={(event)=> setPerson({...person.address,street:event.target.value})}
+                                onChange={(event)=> setPerson({...person, address: { ...person.address, street: event.target.value } })}   
                               />
                             </GridItem>
                             <GridItem xs={12} sm={12} md={2}>
@@ -179,7 +178,7 @@ export default function PersonProfile() {
                                 formControlProps={{
                                   fullWidth: true
                                 }}
-                                onChange={(event)=> setPerson({...person.address,buildingNumber:event.target.value})}
+                                onChange={(event)=> setPerson({...person, address: { ...person.address, buildingNumber: event.target.value } })}   
                               />
                             </GridItem>
                             <GridItem xs={12} sm={12} md={2}>
@@ -189,7 +188,7 @@ export default function PersonProfile() {
                                 formControlProps={{
                                   fullWidth: true
                                 }}
-                                onChange={(event)=> setPerson({...person.address,apartmentNumber:event.target.value})}
+                                onChange={(event)=> setPerson({...person, address: { ...person.address, apartmentNumber: event.target.value } })}   
                               />
                             </GridItem>
                         </GridContainer>
