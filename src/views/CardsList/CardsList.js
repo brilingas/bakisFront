@@ -46,6 +46,7 @@ export default function CardsList() {
   const classes = useStyles();
   const tableCellClasses = classnames(classes.tableCell);
   const [cards,setCards]=useState([]);
+  const[location, setLocation]=useState();
   const getCards=async()=>{
     await axios.get(API_URL)
     .then((response)=>{
@@ -55,7 +56,7 @@ export default function CardsList() {
   useEffect(() => {
     getCards();
   }, []);  
-  console.log(cards[0]);
+  console.log("CARD"+cards[0]);
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>

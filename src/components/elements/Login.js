@@ -4,6 +4,7 @@ import Button from './Button';
 import axios from 'axios';
 const Login = ({
   }) => {
+    //TODO put into obj, not have separate fields
     const [workerId, setWorkerId] = useState("workerId");
     const [cardId, setCardId] = useState("cardId");
    

@@ -53,7 +53,7 @@ export default function LocationsList() {
   useEffect(() => {
     getLocations();
   }, []);  
-  console.log(locations);
+ // console.log(locations);
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>

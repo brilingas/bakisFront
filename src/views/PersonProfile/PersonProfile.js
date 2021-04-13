@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import GridItem from "../../components/Grid/GridItem.js";
@@ -11,7 +11,7 @@ import CardAvatar from "../../components/Card/CardAvatar.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardFooter from "../../components/Card/CardFooter.js";
 import avatar from "../../assets/img/faces/marc.jpg";
-
+import axios from "axios";
 const styles = {
   cardCategoryWhite: {
     color: "rgba(255,255,255,.62)",
@@ -32,8 +32,18 @@ const styles = {
 };
 
 const useStyles = makeStyles(styles);
+const API_URL = "http://localhost:8080/persons";
 export default function PersonProfile() {
   const classes = useStyles();
+  const [person, setPerson] =useState({});
+    const handleSubmit = (event) => {
+    event.preventDefault();   
+    alert("person name:"+person.name+"address:"+person.address.country);
+    axios.post(`http://localhost:8080/workers/login`,person)
+      .then((response) => {
+        console.log(response.data);
+      })
+  }
   return (
     <div>
       <GridContainer>
@@ -51,7 +61,8 @@ export default function PersonProfile() {
                     formControlProps={{
                       fullWidth: true
                     }}
-                  />
+                    onChange={(event)=> setPerson({...person, name: event.target.value})}
+                    />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={2}>
                   <CustomInput
@@ -60,7 +71,8 @@ export default function PersonProfile() {
                     formControlProps={{
                       fullWidth: true
                     }}
-                  />
+                    onChange={(event)=> setPerson({...person, surname: event.target.value})}
+                    />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={1}>
                   <CustomInput
@@ -69,6 +81,7 @@ export default function PersonProfile() {
                     formControlProps={{
                       fullWidth: true
                     }}
+                    onChange={(event)=> setPerson({...person, birthday: event.target.value})}
                   />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={2}>
@@ -78,6 +91,7 @@ export default function PersonProfile() {
                     formControlProps={{
                       fullWidth: true
                     }}
+                    onChange={(event)=> setPerson({...person, phoneNumber: event.target.value})}
                   />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={3}>
@@ -87,6 +101,7 @@ export default function PersonProfile() {
                     formControlProps={{
                       fullWidth: true
                     }}
+                    onChange={(event)=> setPerson({...person, email: event.target.value})}
                   />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={1}>
@@ -96,6 +111,7 @@ export default function PersonProfile() {
                     formControlProps={{
                       fullWidth: true
                     }}
+                    onChange={(event)=> setPerson({...person, photo: event.target.value})}
                   />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={1}>
@@ -105,6 +121,7 @@ export default function PersonProfile() {
                     formControlProps={{
                       fullWidth: true
                     }}
+                    onChange={(event)=> setPerson({...person, photo: event.target.value})}
                   />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={1}>
@@ -114,6 +131,7 @@ export default function PersonProfile() {
                     formControlProps={{
                       fullWidth: true
                     }}
+                    onChange={(event)=> setPerson({...person, gender: event.target.value})}
                   />
                 </GridItem>
                 <GridContainer>
@@ -131,6 +149,7 @@ export default function PersonProfile() {
                                 formControlProps={{
                                   fullWidth: true
                                 }}
+                                onChange={(event)=> setPerson({...person.address,country:event.target.value})}
                               />
                             </GridItem>
                             <GridItem xs={12} sm={12} md={2}>
@@ -140,6 +159,7 @@ export default function PersonProfile() {
                                 formControlProps={{
                                   fullWidth: true
                                 }}
+                                onChange={(event)=> setPerson({...person.address,city:event.target.value})}
                               />
                             </GridItem>
                             <GridItem xs={12} sm={12} md={2}>
@@ -149,6 +169,7 @@ export default function PersonProfile() {
                                 formControlProps={{
                                   fullWidth: true
                                 }}
+                                onChange={(event)=> setPerson({...person.address,street:event.target.value})}
                               />
                             </GridItem>
                             <GridItem xs={12} sm={12} md={2}>
@@ -158,6 +179,7 @@ export default function PersonProfile() {
                                 formControlProps={{
                                   fullWidth: true
                                 }}
+                                onChange={(event)=> setPerson({...person.address,buildingNumber:event.target.value})}
                               />
                             </GridItem>
                             <GridItem xs={12} sm={12} md={2}>
@@ -167,6 +189,7 @@ export default function PersonProfile() {
                                 formControlProps={{
                                   fullWidth: true
                                 }}
+                                onChange={(event)=> setPerson({...person.address,apartmentNumber:event.target.value})}
                               />
                             </GridItem>
                         </GridContainer>
@@ -177,7 +200,7 @@ export default function PersonProfile() {
             </GridContainer>
             </CardBody>
             <CardFooter>
-              <Button color="primary">Save</Button>
+              <Button color="primary" onClick={handleSubmit}>Save</Button>
             </CardFooter>
           </Card>
         </GridItem>

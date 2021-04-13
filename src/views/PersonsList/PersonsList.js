@@ -61,7 +61,7 @@ export default function PersonsList() {
   useEffect(() => {
     getPersons();
   }, []);  
-  console.log(persons);
+  console.log(persons[0]);
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
