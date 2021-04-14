@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import GridItem from "../../components/Grid/GridItem.js";
@@ -11,6 +11,7 @@ import CardAvatar from "../../components/Card/CardAvatar.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardFooter from "../../components/Card/CardFooter.js";
 import avatar from "../../assets/img/faces/marc.jpg";
+import axios from "axios";
 
 const styles = {
   cardCategoryWhite: {
@@ -30,10 +31,27 @@ const styles = {
     textDecoration: "none"
   }
 };
-
+const API_URL = "http://localhost:8080/cards";
 const useStyles = makeStyles(styles);
+
 export default function CardProfile() {
   const classes = useStyles();
+  const [card, setCard] =useState(
+    {
+      validFrom : "2017-03-14",
+      validTo : "2017-03-19",
+      locationId : "606de7fe543c604fc3a54acc",
+      cardType : "FULL_TIME_EMPLOYEE",
+      cardAvailability : false,
+  }
+    );
+  const handleSubmit = (event) => {
+    event.preventDefault();   
+    axios.post(API_URL,card)
+         .then((response) => {
+          console.log("req:");
+        })
+    }
   return (
     <div>
       <GridContainer>
@@ -90,6 +108,7 @@ export default function CardProfile() {
                                                   formControlProps={{
                                                     fullWidth: true
                                                   }}
+                                                  onChange={(event)=> setCard({...card, address: { ...card.address, country: event.target.value } })}   
                                                 />
                                               </GridItem>
                                               <GridItem xs={12} sm={12} md={2}>
@@ -99,6 +118,7 @@ export default function CardProfile() {
                                                   formControlProps={{
                                                     fullWidth: true
                                                   }}
+                                                  onChange={(event)=> setCard({...card, address: { ...card.address, city: event.target.value } })}   
                                                 />
                                               </GridItem>
                                                 <GridItem xs={12} sm={12} md={3}>
@@ -108,6 +128,7 @@ export default function CardProfile() {
                                                     formControlProps={{
                                                       fullWidth: true
                                                     }}
+                                                    onChange={(event)=> setCard({...card, address: { ...card.address, street: event.target.value } })}   
                                                   />
                                                 </GridItem>
                                               <GridItem xs={12} sm={12} md={2}>
@@ -117,6 +138,7 @@ export default function CardProfile() {
                                                   formControlProps={{
                                                     fullWidth: true
                                                   }}
+                                                  onChange={(event)=> setCard({...card, address: { ...card.address, buildingNumber: event.target.value } })}   
                                                 />
                                               </GridItem>
                                               <GridItem xs={12} sm={12} md={3}>
@@ -126,6 +148,7 @@ export default function CardProfile() {
                                                   formControlProps={{
                                                     fullWidth: true
                                                   }}
+                                                  onChange={(event)=> setCard({...card, address: { ...card.address, apartmentNumber: event.target.value } })}   
                                                 />
                                               </GridItem>
                                             </GridContainer>
@@ -140,6 +163,7 @@ export default function CardProfile() {
                                   formControlProps={{
                                     fullWidth: true
                                   }}
+                                  onChange={(event)=> setCard({...card, address: { ...card.address, country: event.target.value } })}   
                                 />
                               </GridItem>
                                 <GridItem xs={12} sm={12} md={3}>

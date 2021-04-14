@@ -32,16 +32,40 @@ const styles = {
 };
 const useStyles = makeStyles(styles);
 const API_URL = "http://localhost:8080/persons";
+
 export default function PersonProfile() {
   const classes = useStyles();
-  const [person, setPerson] =useState({});
+  const [person, setPerson] =useState(
+    {
+      name : "John",
+      surname : "Doe",
+      birthday : "1955-05-19T15:16:20.201Z",
+      phoneNumber : "+555 (555) 555-5555",
+      email : "john@doe.com",
+      photo : [ 
+          1, 
+          1, 
+          1
+      ],
+      signature : [ 
+          1
+      ],
+      address : {
+          country : "Congo",
+          city : "Chicagp",
+          street : "5th street",
+          buildingNumber : "160",
+          apartmentNumber : "76"
+      },
+      gender : "MALE",
+  });
   const handleSubmit = (event) => {
   event.preventDefault();   
-  alert("address country:"+person.address.country);
-  axios.post(API_URL,person)
-       .then((response) => {
-        console.log(response.data);
-      })
+  console.log(person)
+   axios.post(API_URL,person)
+        .then((response) => {
+          console.log("Response: "+response.data)
+       })
   }
   return (
     <div>

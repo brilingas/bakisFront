@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import GridItem from "../../components/Grid/GridItem.js";
@@ -11,6 +11,7 @@ import CardAvatar from "../../components/Card/CardAvatar.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardFooter from "../../components/Card/CardFooter.js";
 import avatar from "../../assets/img/faces/marc.jpg";
+import axios from "axios";
 
 const styles = {
   cardCategoryWhite: {
@@ -31,9 +32,31 @@ const styles = {
   }
 };
 
+const API_URL = "http://localhost:8080/locations";
 const useStyles = makeStyles(styles);
 export default function LocationProfile() {
   const classes = useStyles();
+  const [location, setLocation] =useState(
+    {
+      address : {
+          country : "Congo",
+          city : "Chicago",
+          street : "John Street",
+          buildingNumber : "12",
+          apartmentNumber : "34"
+      },
+      name : "Test office",
+      contactPerson : "John Doe",
+      status : "OCCUPIED",
+      type : "EVENT"
+  });
+  const handleSubmit = (event) => {
+    event.preventDefault();   
+    axios.post(API_URL,location)
+         .then((response) => {
+          console.log("req:");
+        })
+    }
   return (
     <div>
       <GridContainer>
@@ -58,6 +81,7 @@ export default function LocationProfile() {
                                 formControlProps={{
                                   fullWidth: true
                                 }}
+                                onChange={(event)=> setLocation({...location, address: { ...location.address, country: event.target.value } })}   
                               />
                             </GridItem>
                             <GridItem xs={12} sm={12} md={2}>
@@ -67,6 +91,7 @@ export default function LocationProfile() {
                                 formControlProps={{
                                   fullWidth: true
                                 }}
+                                onChange={(event)=> setLocation({...location, address: { ...location.address, city: event.target.value } })}   
                               />
                             </GridItem>
                             <GridItem xs={12} sm={12} md={2}>
@@ -76,6 +101,7 @@ export default function LocationProfile() {
                                 formControlProps={{
                                   fullWidth: true
                                 }}
+                                onChange={(event)=> setLocation({...location, address: { ...location.address, street: event.target.value } })}   
                               />
                             </GridItem>
                             <GridItem xs={12} sm={12} md={2}>
@@ -85,6 +111,7 @@ export default function LocationProfile() {
                                 formControlProps={{
                                   fullWidth: true
                                 }}
+                                onChange={(event)=> setLocation({...location, address: { ...location.address, buildingNumber: event.target.value } })}   
                               />
                             </GridItem>
                             <GridItem xs={12} sm={12} md={2}>
@@ -94,6 +121,7 @@ export default function LocationProfile() {
                                 formControlProps={{
                                   fullWidth: true
                                 }}
+                                onChange={(event)=> setLocation({...location, address: { ...location.address, apartmentNumber: event.target.value } })}   
                               />
                             </GridItem>
                         </GridContainer>
@@ -109,6 +137,7 @@ export default function LocationProfile() {
                     formControlProps={{
                       fullWidth: true
                     }}
+                    onChange={(event)=> setLocation({...location, name: event.target.value})}
                   />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={3}>
@@ -118,6 +147,7 @@ export default function LocationProfile() {
                     formControlProps={{
                       fullWidth: true
                     }}
+                    onChange={(event)=> setLocation({...location, contactPerson: event.target.value})}
                   />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={2}>
@@ -127,6 +157,7 @@ export default function LocationProfile() {
                     formControlProps={{
                       fullWidth: true
                     }}
+                    onChange={(event)=> setLocation({...location, status: event.target.value})}
                   />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={2}>
@@ -136,12 +167,13 @@ export default function LocationProfile() {
                     formControlProps={{
                       fullWidth: true
                     }}
+                    onChange={(event)=> setLocation({...location, type: event.target.value})}
                   />
                 </GridItem>
                 </GridContainer>
             </CardBody>
             <CardFooter>
-              <Button color="primary">Save</Button>
+              <Button color="primary" onClick={handleSubmit}>Save</Button>
             </CardFooter>
           </Card>
         </GridItem>

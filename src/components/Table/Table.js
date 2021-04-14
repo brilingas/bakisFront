@@ -39,7 +39,8 @@ export default function CustomTable(props) {
                 {Object.keys(tableEntity).map((tableEntityKey, key) => {
                   return (
                     <TableCell className={classes.tableCell} key={key}>
-                      {tableEntity[tableEntityKey].toString()}
+                      {tableEntity[tableEntityKey]}
+                      {/* add .tostring */}
                     </TableCell>
                   );
                 })}
