@@ -33,7 +33,7 @@ const Hero = ({
   const [videoModalActive, setVideomodalactive] = useState(false);
 
   const openVideoModal = (e) => {
-    e.preventDefault();//irgi deti switcha?
+    e.preventDefault();
     setVideomodalactive(true);
   }
   const closeVideoModal = (e) => {
@@ -70,7 +70,6 @@ const Hero = ({
     topDivider && 'has-top-divider',
     bottomDivider && 'has-bottom-divider'
   );
-  //ateina `signupModalActive`. tai jei jis true, tai tada returnint Modal componenta, kiap kad daro su video
 
   const signupModal = () => {
     if (signupModalActive) {
@@ -137,7 +136,6 @@ const Hero = ({
                 height={504} />
             </a>
           </div>
-          {/* padaryti ir su video modalu ta pati */}
           {loginModal()}
           {signupModal()}
           <Modal
