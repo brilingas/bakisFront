@@ -1,9 +1,9 @@
 import React from 'react';
-import Hero from '../components/sections/Hero';
-import FeaturesTiles from '../components/sections/FeaturesTiles';
-import FeaturesSplit from '../components/sections/FeaturesSplit';
-import Testimonial from '../components/sections/Testimonial';
-import Cta from '../components/sections/Cta';
+import Hero from '../components/Sections/Hero';
+import FeaturesTiles from '../components/Sections/FeaturesTiles';
+import FeaturesSplit from '../components/Sections/FeaturesSplit';
+import Testimonial from '../components/Sections/Testimonial';
+import Cta from '../components/Sections/Cta';
 
 export default function Home({ signupModalActive, setSignupModalActive, loginModalActive, setLoginModalActive }){
 
