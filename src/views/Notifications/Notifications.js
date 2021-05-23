@@ -7,9 +7,9 @@ import GridContainer from "../../components/Grid/GridContainer.js";
 import Button from "../../components/CustomButtons/Button.js";
 import SnackbarContent from "../../components/Snackbar/SnackbarContent.js";
 import Snackbar from "../../components/Snackbar/Snackbar.js";
-import Card from "../../components/Card/Card.js";
-import CardHeader from "../../components/Card/CardHeader.js";
-import CardBody from "../../components/Card/CardBody.js";
+import Card from "../../components/Poster/Poster.js";
+import CardHeader from "../../components/Poster/PosterHeader.js";
+import CardBody from "../../components/Poster/PosterBody.js";
 
 const styles = {
   cardCategoryWhite: {
