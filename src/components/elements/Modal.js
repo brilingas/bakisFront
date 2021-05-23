@@ -27,7 +27,7 @@ const MODAL_TYPE = {
   SIGNUP: "signup",
   LOGIN: "login"
 }
-const Modal = ({
+export default function Modal({
   className,
   MODAL_TYPE,
   children,
@@ -37,7 +37,7 @@ const Modal = ({
   video,
   videoTag,
   ...props
-}) => {
+}){
   useEffect(() => {
     document.addEventListener('keydown', keyPress);
     document.addEventListener('click', stopProgagation);
@@ -73,7 +73,6 @@ const Modal = ({
     MODAL_TYPE.LOGIN && 'modal-login',
     className
   );
-  //padaryti su Video modalu ta pati - atskira komponenta
   const switchModal = () => {
     switch (MODAL_TYPE) {
       case "video":
@@ -127,5 +126,3 @@ const Modal = ({
 
 Modal.propTypes = propTypes;
 Modal.defaultProps = defaultProps;
-
-export default Modal;

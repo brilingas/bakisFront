@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { SectionTilesProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
-import Image from '../elements/Image';
+import Image from '../Elements/Image';
 import FeaturesTileIcon01 from '../../assets/images/feature-tile-icon-01.svg'
 import FeaturesTileIcon02 from '../../assets/images/feature-tile-icon-02.svg'
 import FeaturesTileIcon03 from '../../assets/images/feature-tile-icon-03.svg'
@@ -17,7 +17,7 @@ const propTypes = {
 const defaultProps = {
   ...SectionTilesProps.defaults
 }
-const FeaturesTiles = ({
+export default function FeaturesTiles({
   className,
   topOuterDivider,
   bottomOuterDivider,
@@ -27,7 +27,7 @@ const FeaturesTiles = ({
   invertColor,
   pushLeft,
   ...props
-}) => {
+}){
 
   const outerClasses = classNames(
     'features-tiles section',
@@ -205,5 +205,3 @@ const FeaturesTiles = ({
 
 FeaturesTiles.propTypes = propTypes;
 FeaturesTiles.defaultProps = defaultProps;
-
-export default FeaturesTiles;

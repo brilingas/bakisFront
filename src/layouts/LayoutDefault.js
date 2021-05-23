@@ -3,7 +3,7 @@ import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import Home from '../views/Home';
 
-const LayoutDefault = ({ children }) => {
+export default function LayoutDefault({ children }){
   const [signupModalActive, setSignupModalActive] = useState(false);
   const [loginModalActive, setLoginModalActive] = useState(false);
 
@@ -18,5 +18,3 @@ const LayoutDefault = ({ children }) => {
     </>
   )
 };
-
-export default LayoutDefault;  

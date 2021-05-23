@@ -33,7 +33,7 @@ const defaultProps = {
   hint: null
 }
 
-const Select = ({
+export default function Select({
   className,
   children,
   label,
@@ -46,7 +46,7 @@ const Select = ({
   placeholder,
   hint,
   ...props
-}) => {
+}){
 
   const classes = classNames(
     'form-select',
@@ -75,5 +75,3 @@ const Select = ({
 
 Select.propTypes = propTypes;
 Select.defaultProps = defaultProps;
-
-export default Select;

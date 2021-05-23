@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-const AppRoute = ({
+export default function AppRoute({
   component: Component,
   layout: Layout,
   ...rest
-}) => {
+}){
   Layout = (Layout === undefined) ? props => (<>{props.children}</>) : Layout;
   return (
     <Route
@@ -17,4 +17,3 @@ const AppRoute = ({
       )} />
   );
 }
-export default AppRoute;

@@ -18,22 +18,19 @@ const defaultProps = {
   alt: undefined
 }
 
-const Image = ({
+export default function Image({
   className,
   src,
   width,
   height,
   alt,
   ...props
-}) => {
-
+}){
   const [loaded, setLoaded] = useState(false);
-
   const image = useRef(null);
 
   useEffect(() => {
     handlePlaceholder(image.current);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   const placeholderSrc = (w, h) => {
@@ -77,5 +74,3 @@ const Image = ({
 
 Image.propTypes = propTypes;
 Image.defaultProps = defaultProps;
-
-export default Image;

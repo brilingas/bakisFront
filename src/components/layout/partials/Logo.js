@@ -1,13 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import Image from '../../elements/Image';
+import Image from '../../Elements/Image';
 import LogoIcon from '../../../assets/images/logo.svg';
 
-const Logo = ({
+export default function Logo({
   className,
   ...props
-}) => {
+}){
 
   const classes = classNames(
     'brand',
@@ -31,5 +31,3 @@ const Logo = ({
     </div>
   );
 }
-
-export default Logo;

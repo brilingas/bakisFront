@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 
-// Props shared by all sections
 const SectionShared = {
   types: {
     topOuterDivider: PropTypes.bool,

@@ -22,12 +22,12 @@ import CardHeader from "../../components/Card/CardHeader.js";
 import CardIcon from "../../components/Card/CardIcon.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardFooter from "../../components/Card/CardFooter.js";
-import { issues, guests, events } from "../../variables/general.js";
+import { issues, guests, events } from "../../variables/General.js";
 import {
   dailySalesChart,
   emailsSubscriptionChart,
   completedTasksChart
-} from "../../variables/charts.js";
+} from "../../variables/Charts.js";
 import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
 import { LocationCity } from "@material-ui/icons";
 

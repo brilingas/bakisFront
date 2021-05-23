@@ -37,7 +37,7 @@ const defaultProps = {
   rows: 3,
   hint: null
 }
-const Input = ({
+export default function Input({
   className,
   children,
   label,
@@ -55,7 +55,7 @@ const Input = ({
   rows,
   hint,
   ...props
-}) => {
+}){
   const wrapperClasses = classNames(
     (formGroup && formGroup !== '') && (formGroup === 'desktop' ? 'form-group-desktop' : 'form-group'),
     (hasIcon && hasIcon !== '') && 'has-icon-' + hasIcon
@@ -92,4 +92,3 @@ const Input = ({
 }
 Input.propTypes = propTypes;
 Input.defaultProps = defaultProps;
-export default Input;

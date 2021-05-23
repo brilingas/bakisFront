@@ -13,7 +13,7 @@ const dailySalesChart = {
       tension: 0
     }),
     low: 0,
-    high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+    high: 50,
     chartPadding: {
       top: 0,
       right: 0,
@@ -21,7 +21,6 @@ const dailySalesChart = {
       left: 0
     }
   },
-  // for animation
   animation: {
     draw: function(data) {
       if (data.type === "line" || data.type === "area") {
@@ -122,7 +121,7 @@ const completedTasksChart = {
       tension: 0
     }),
     low: 0,
-    high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+    high: 1000,
     chartPadding: {
       top: 0,
       right: 0,

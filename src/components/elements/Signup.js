@@ -1,8 +1,7 @@
 import React from 'react';
 import Input from './Input';
 import Button from './Button';
-const Signup = ({
-  }) => {
+export default function Signup(){
     return(
         <div>
             <Input id="workerId" type="workerId" placeholder="Worker Id"/>
@@ -17,7 +16,4 @@ const Signup = ({
             <Button tag="signup" className="button button-primary button-wide-mobile button-sm" wideMobile onClick={()=>console.log("Signup")}> Sign up </Button>
         </div>
     )
-//workerid,personid,company,department,position, dateofemployment, loactionofoffice,cardid, worker type
-//pagal WorkerEntity laukai
   }
-  export default Signup;

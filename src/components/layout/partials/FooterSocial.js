@@ -1,10 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const FooterSocial = ({
+export default function FooterSocial({
   className,
   ...props
-}) => {
+}){
 
   const classes = classNames(
     'footer-social',
@@ -65,5 +65,3 @@ const FooterSocial = ({
     </div>
   );
 }
-
-export default FooterSocial;

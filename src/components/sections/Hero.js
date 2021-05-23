@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
-import ButtonGroup from '../elements/ButtonGroup';
-import Button from '../elements/Button';
-import Image from '../elements/Image';
-import Modal from '../elements/Modal';
+import ButtonGroup from '../Elements/ButtonGroup';
+import Button from '../Elements/Button';
+import Image from '../Elements/Image';
+import Modal from '../Elements/Modal';
 import VideoPlaceholder from '../../assets/images/video-placeholder.png';
 
 const propTypes = {
@@ -15,7 +15,7 @@ const defaultProps = {
   ...SectionProps.defaults
 }
 
-const Hero = ({
+export default function Hero({
   className,
   topOuterDivider,
   bottomOuterDivider,
@@ -28,7 +28,7 @@ const Hero = ({
   loginModalActive,
   setLoginModalActive,
   ...props
-}) => {
+}){
 
   const [videoModalActive, setVideomodalactive] = useState(false);
 
@@ -154,5 +154,3 @@ const Hero = ({
 
 Hero.propTypes = propTypes;
 Hero.defaultProps = defaultProps;
-
-export default Hero;

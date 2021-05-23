@@ -20,7 +20,7 @@ const defaultProps = {
   checked: undefined
 }
 
-const Switch = ({
+export default function Switch({
   className,
   children,
   name,
@@ -29,7 +29,7 @@ const Switch = ({
   disabled,
   checked,
   ...props
-}) => {
+}){
 
   const classes = classNames(
     'form-switch',
@@ -61,5 +61,3 @@ const Switch = ({
 
 Switch.propTypes = propTypes;
 Switch.defaultProps = defaultProps;
-
-export default Switch;

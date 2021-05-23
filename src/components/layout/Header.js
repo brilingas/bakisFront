@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
-import ButtonGroup from '../elements/ButtonGroup';
-import Button from '../elements/Button';
-import Modal from '../elements/Modal';
+import ButtonGroup from '../Elements/ButtonGroup';
+import Button from '../Elements/Button';
+import Modal from '../Elements/Modal';
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -23,7 +23,7 @@ const defaultProps = {
   bottomDivider: false
 }
 
-const Header = ({
+export default function Header({
   className,
   navPosition,
   hideNav,
@@ -35,7 +35,7 @@ const Header = ({
   signupModalActive,
   setSignupModalActive,
   ...props
-}) => {
+}){
 
   const [isActive, setIsactive] = useState(false);
   const nav = useRef(null);
@@ -144,6 +144,3 @@ const Header = ({
 
 Header.propTypes = propTypes;
 Header.defaultProps = defaultProps;
-
-export default Header;
-

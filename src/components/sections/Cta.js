@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { SectionProps } from '../../utils/SectionProps';
-import Input from '../elements/Input';
+import Input from '../Elements/Input';
 
 const propTypes = {
   ...SectionProps.types,
@@ -14,7 +14,7 @@ const defaultProps = {
   split: false
 }
 
-const Cta = ({
+export default function Cta({
   className,
   topOuterDivider,
   bottomOuterDivider,
@@ -24,7 +24,7 @@ const Cta = ({
   invertColor,
   split,
   ...props
-}) => {
+}){
 
   const outerClasses = classNames(
     'cta section center-content-mobile reveal-from-bottom',
@@ -71,5 +71,3 @@ const Cta = ({
 
 Cta.propTypes = propTypes;
 Cta.defaultProps = defaultProps;
-
-export default Cta;

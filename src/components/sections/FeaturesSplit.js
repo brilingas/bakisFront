@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { SectionSplitProps } from '../../utils/SectionProps';
 import SectionHeader from './partials/SectionHeader';
-import Image from '../elements/Image';
+import Image from '../Elements/Image';
 import FeaturesSplit01 from '../../assets/images/features-split-image-01.png';
 import FeaturesSplit02 from '../../assets/images/features-split-image-02.png';
 import FeaturesSplit03 from '../../assets/images/features-split-image-03.png';
@@ -16,7 +16,7 @@ const defaultProps = {
   ...SectionSplitProps.defaults
 }
 
-const FeaturesSplit = ({
+export default function FeaturesSplit({
   className,
   topOuterDivider,
   bottomOuterDivider,
@@ -29,7 +29,7 @@ const FeaturesSplit = ({
   alignTop,
   imageFill,
   ...props
-}) => {
+}){
 
   const outerClasses = classNames(
     'features-split section',
@@ -155,5 +155,3 @@ const FeaturesSplit = ({
 
 FeaturesSplit.propTypes = propTypes;
 FeaturesSplit.defaultProps = defaultProps;
-
-export default FeaturesSplit;

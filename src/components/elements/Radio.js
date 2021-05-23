@@ -18,7 +18,7 @@ const defaultProps = {
   checked: false
 }
 
-const Radio = ({
+export default function Radio({
   className,
   children,
   name,
@@ -26,7 +26,7 @@ const Radio = ({
   disabled,
   checked,
   ...props
-}) => {
+}){
 
   const classes = classNames(
     'form-radio',
@@ -50,5 +50,3 @@ const Radio = ({
 
 Radio.propTypes = propTypes;
 Radio.defaultProps = defaultProps;
-
-export default Radio;

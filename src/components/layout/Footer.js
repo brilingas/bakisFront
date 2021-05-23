@@ -15,12 +15,12 @@ const defaultProps = {
   topDivider: false
 }
 
-const Footer = ({
+export default function Footer({
   className,
   topOuterDivider,
   topDivider,
   ...props
-}) => {
+}){
 
   const classes = classNames(
     'site-footer center-content-mobile',
@@ -54,5 +54,3 @@ const Footer = ({
 
 Footer.propTypes = propTypes;
 Footer.defaultProps = defaultProps;
-
-export default Footer;

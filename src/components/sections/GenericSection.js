@@ -13,7 +13,7 @@ const defaultProps = {
   ...SectionProps.defaults
 }
 
-const GenericSection = ({
+export default function GenericSection({
   className,
   children,
   topOuterDivider,
@@ -23,7 +23,7 @@ const GenericSection = ({
   hasBgColor,
   invertColor,
   ...props
-}) => {
+}){
 
   const outerClasses = classNames(
     'section',
@@ -56,5 +56,3 @@ const GenericSection = ({
 
 GenericSection.propTypes = propTypes;
 GenericSection.defaultProps = defaultProps;
-
-export default GenericSection;

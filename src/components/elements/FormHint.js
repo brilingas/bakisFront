@@ -12,13 +12,12 @@ const defaultProps = {
   status: false
 }
 
-const FormHint = ({
+export default function FormHint({
   children,
   className,
   status,
   ...props
-}) => {
-
+}){
   const classes = classNames(
     'form-hint',
     status && `text-color-${status}`,
@@ -37,5 +36,3 @@ const FormHint = ({
 
 FormHint.propTypes = propTypes;
 FormHint.defaultProps = defaultProps;
-
-export default FormHint;

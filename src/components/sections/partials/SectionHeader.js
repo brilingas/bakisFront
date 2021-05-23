@@ -16,13 +16,13 @@ const defaultProps = {
   tag: 'h2'
 }
 
-const SectionHeader = ({
+export default function SectionHeader({
   className,
   data,
   children,
   tag,
   ...props
-}) => {
+}){
 
   const classes = classNames(
     'section-header',
@@ -59,5 +59,3 @@ const SectionHeader = ({
 
 SectionHeader.propTypes = propTypes;
 SectionHeader.defaultProps = defaultProps;
-
-export default SectionHeader;

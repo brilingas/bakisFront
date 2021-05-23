@@ -9,14 +9,14 @@ const propTypes = {
   onLinkClick: PropTypes.func
 }
 
-const SmoothScroll = ({
+export default function SmoothScroll({
   className,
   children,
   to,
   duration,
   onLinkClick,
   ...props
-}) => {
+}){
 
   const easeInOutQuad = (t) => {
     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t
@@ -77,5 +77,3 @@ const SmoothScroll = ({
 }
 
 SmoothScroll.propTypes = propTypes;
-
-export default SmoothScroll;

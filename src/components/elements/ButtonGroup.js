@@ -1,16 +1,15 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const ButtonGroup = ({
+export default function ButtonGroup({
   className,
   ...props
-}) => {
+}){
 
   const classes = classNames(
     'button-group',
     className
   );
-
   return (
     <div
       {...props}
@@ -18,5 +17,3 @@ const ButtonGroup = ({
     />
   );
 }
-
-export default ButtonGroup;

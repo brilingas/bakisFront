@@ -2,8 +2,8 @@ import React, { useState} from 'react';
 import Input from './Input';
 import Button from './Button';
 import axios from 'axios';
-const Login = ({
-  }) => {
+export default function Login({
+  }){
     //TODO put into obj, not have separate fields
     const [workerId, setWorkerId] = useState("workerId");
     const [cardId, setCardId] = useState("cardId");
@@ -28,4 +28,3 @@ const Login = ({
         </div>
     )
   }
-  export default Login;

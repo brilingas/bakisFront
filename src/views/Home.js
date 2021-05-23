@@ -5,7 +5,7 @@ import FeaturesSplit from '../components/sections/FeaturesSplit';
 import Testimonial from '../components/sections/Testimonial';
 import Cta from '../components/sections/Cta';
 
-const Home = ({ signupModalActive, setSignupModalActive, loginModalActive, setLoginModalActive }) => {
+export default function Home({ signupModalActive, setSignupModalActive, loginModalActive, setLoginModalActive }){
 
   return (
     <>
@@ -17,5 +17,3 @@ const Home = ({ signupModalActive, setSignupModalActive, loginModalActive, setLo
     </>
   );
 }
-
-export default Home;

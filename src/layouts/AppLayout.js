@@ -6,7 +6,7 @@ import Sidebar from '../components/Sidebar/Sidebar';
 
 import routes from '../routes';
 
-const AppLayout = ({ children }) => {
+export default function AppLayout({ children }){
   const [signupModalActive, setSignupModalActive] = useState(false);
   const [loginModalActive, setLoginModalActive] = useState(false);
 
@@ -24,5 +24,3 @@ const AppLayout = ({ children }) => {
     </>
   )
 };
-
-export default AppLayout;  

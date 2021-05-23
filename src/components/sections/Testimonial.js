@@ -11,7 +11,7 @@ const defaultProps = {
   ...SectionTilesProps.defaults
 }
 
-const Testimonial = ({
+export default function Testimonial({
   className,
   topOuterDivider,
   bottomOuterDivider,
@@ -21,7 +21,7 @@ const Testimonial = ({
   invertColor,
   pushLeft,
   ...props
-}) => {
+}){
 
   const outerClasses = classNames(
     'testimonial section',
@@ -118,5 +118,3 @@ const Testimonial = ({
 
 Testimonial.propTypes = propTypes;
 Testimonial.defaultProps = defaultProps;
-
-export default Testimonial;

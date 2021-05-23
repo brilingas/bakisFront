@@ -14,13 +14,13 @@ const defaultProps = {
   id: null
 }
 
-const FormLabel = ({
+export default function FormLabel({
   className,
   children,
   labelHidden,
   id,
   ...props
-}) => {
+}){
 
   const classes = classNames(
     'form-label',
@@ -41,5 +41,3 @@ const FormLabel = ({
 
 FormLabel.propTypes = propTypes;
 FormLabel.defaultProps = defaultProps;
-
-export default FormLabel;

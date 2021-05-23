@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { func } from 'prop-types';
 import classNames from 'classnames';
 
 const propTypes = {
@@ -22,7 +22,7 @@ const defaultProps = {
   disabled: false
 }
 
-const Button = ({
+export default function Button({
   className,
   tag,
   color,
@@ -32,8 +32,7 @@ const Button = ({
   wideMobile,
   disabled,
   ...props
-}) => {
-
+}){
   const classes = classNames(
     'button',
     color && `button-${color}`,
@@ -56,5 +55,3 @@ const Button = ({
 
 Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;
-
-export default Button;

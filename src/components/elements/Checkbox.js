@@ -18,7 +18,7 @@ const defaultProps = {
   checked: undefined
 }
 
-const Checkbox = ({
+export default function Checkbox({
   className,
   children,
   name,
@@ -26,7 +26,7 @@ const Checkbox = ({
   disabled,
   checked,
   ...props
-}) => {
+}){
 
   const classes = classNames(
     'form-checkbox',
@@ -50,5 +50,3 @@ const Checkbox = ({
 
 Checkbox.propTypes = propTypes;
 Checkbox.defaultProps = defaultProps;
-
-export default Checkbox;
