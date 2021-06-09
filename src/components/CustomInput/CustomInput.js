@@ -11,7 +11,7 @@ import styles from "../../assets/jss/material-dashboard-react/components/customI
 
 const useStyles = makeStyles(styles);
 
-const CustomInput=({formControlProps,
+export default function CustomInput({formControlProps,
   labelText,
   id,
   labelProps,
@@ -19,7 +19,7 @@ const CustomInput=({formControlProps,
   error,
   success,
   onChange,
-  ...props})=>{
+  ...props}){
   const classes = useStyles();
 
   // const handleChange=(event)=>{
@@ -71,7 +71,6 @@ const CustomInput=({formControlProps,
     </FormControl>
   );
 }
-
 CustomInput.propTypes = {
   labelText: PropTypes.node,
   labelProps: PropTypes.object,
@@ -82,4 +81,3 @@ CustomInput.propTypes = {
   success: PropTypes.bool,
   onChange:PropTypes.func
 };
-export default CustomInput;

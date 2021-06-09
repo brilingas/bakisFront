@@ -1,18 +1,12 @@
 import React from "react";
-// nodejs library that concatenates classes
 import classNames from "classnames";
-// nodejs library to set properties for components
 import PropTypes from "prop-types";
-
-// material-ui components
 import { makeStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-// core components
-import Card from "../Card/Card.js";
-import CardBody from "../Card/CardBody.js";
-import CardHeader from "../Card/CardHeader.js";
-
+import Card from "../Poster/Poster.js";
+import CardBody from "../Poster/PosterBody.js";
+import CardHeader from "../Poster/PosterHeader.js";
 import styles from "../../assets/jss/material-dashboard-react/components/customTabsStyle.js";
 
 const useStyles = makeStyles(styles);
@@ -23,10 +17,9 @@ export default function CustomTabs(props) {
     setValue(value);
   };
   const classes = useStyles();
-  const { headerColor, plainTabs, tabs, title, rtlActive } = props;
+  const { headerColor, plainTabs, tabs, title} = props;
   const cardTitle = classNames({
-    [classes.cardTitle]: true,
-    [classes.cardTitleRTL]: rtlActive
+    [classes.cardTitle]: true
   });
   return (
     <Card plain={plainTabs}>
@@ -94,6 +87,5 @@ CustomTabs.propTypes = {
       tabContent: PropTypes.node.isRequired
     })
   ),
-  rtlActive: PropTypes.bool,
   plainTabs: PropTypes.bool
 };

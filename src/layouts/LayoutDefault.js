@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Header from '../components/layout/Header';
-import Footer from '../components/layout/Footer';
+import Header from '../components/Layout/Header';
+import Footer from '../components/Layout/Footer';
 import Home from '../views/Home';
 
-const LayoutDefault = ({ children }) => {
+export default function LayoutDefault({ children }){
   const [signupModalActive, setSignupModalActive] = useState(false);
   const [loginModalActive, setLoginModalActive] = useState(false);
 
@@ -18,5 +18,3 @@ const LayoutDefault = ({ children }) => {
     </>
   )
 };
-
-export default LayoutDefault;  

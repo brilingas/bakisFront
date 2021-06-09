@@ -17,7 +17,6 @@ import PersonsList from './views/PersonsList/PersonsList';
 import LocationsList from './views/LocationsList/LocationsList';
 import CardsList from './views/CardsList/CardsList';
 import CardProfile from './views/CardProfile/CardProfile';
-// Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
 
 const trackPage = page => {
@@ -53,8 +52,7 @@ const App = () => {
           <AppRoute exact path="/admin/card" component={CardProfile} layout={Admin} />
           <AppRoute exact path="/admin/cards" component={CardsList} layout={Admin} />
 
-
-          {/* <Redirect from="/" to="/admin/dashboard"/> */}
+          <Redirect from="/" to="/admin/dashboard"/>
         </Switch>
       )} />
   );

@@ -17,17 +17,17 @@ import GridContainer from "../../components/Grid/GridContainer.js";
 import Table from "../../components/Table/Table.js";
 import Tasks from "../../components/Tasks/Tasks.js";
 import CustomTabs from "../../components/CustomTabs/CustomTabs.js";
-import Card from "../../components/Card/Card.js";
-import CardHeader from "../../components/Card/CardHeader.js";
-import CardIcon from "../../components/Card/CardIcon.js";
-import CardBody from "../../components/Card/CardBody.js";
-import CardFooter from "../../components/Card/CardFooter.js";
-import { issues, guests, events } from "../../variables/general.js";
+import Card from "../../components/Poster/Poster.js";
+import CardHeader from "../../components/Poster/PosterHeader.js";
+import CardIcon from "../../components/Poster/PosterIcon.js";
+import CardBody from "../../components/Poster/PosterBody.js";
+import CardFooter from "../../components/Poster/PosterFooter.js";
+import { issues, guests, events } from "../../variables/General.js";
 import {
   dailySalesChart,
   emailsSubscriptionChart,
   completedTasksChart
-} from "../../variables/charts.js";
+} from "../../variables/Charts.js";
 import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
 import { LocationCity } from "@material-ui/icons";
 
