@@ -25,11 +25,11 @@ Guest registry app allows you to manage your company's visitors and guests by cr
 
 ### Home page
 
-![Home page](https://pasteboard.co/K6RCbkb.png)
+![Home page](https://i.imgur.com/WKF2olM.png)
 
 ### Dashboard
 
-![Dashboard](https://pasteboard.co/K6RCqJL.png)
+![Dashboard](https://i.imgur.com/s8ow0ii.png)
 
 
 ## Project status
