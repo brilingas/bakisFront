@@ -21,15 +21,15 @@ Guest registry app allows you to manage your company's visitors and guests by cr
 
 ### Class diagram
 
-![Class diagram](https://imgur.com/Wp01Qin)
+![Class diagram](https://pasteboard.co/K6RBX6H.png)
 
 ### Home page
 
-![Home page](https://imgur.com/i9HgtpA)
+![Home page](https://pasteboard.co/K6RCbkb.png)
 
 ### Dashboard
 
-![Dashboard](https://imgur.com/v5M55eS)
+![Dashboard](https://pasteboard.co/K6RCqJL.png)
 
 
 ## Project status
