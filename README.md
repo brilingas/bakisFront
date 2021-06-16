@@ -21,7 +21,7 @@ Guest registry app allows you to manage your company's visitors and guests by cr
 
 ### Class diagram
 
-![Class diagram](https://pasteboard.co/K6RBX6H.png)
+![Class diagram](https://i.imgur.com/dXc2erx.png)
 
 ### Home page
 
