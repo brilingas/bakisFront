@@ -2,6 +2,7 @@
 
 ## Contents
 - [About](#about)
+- [Screenshots](#screenshots)
 - [Project status](#project-status)
 - [Prerequisites](#prerequisites)
 - [Getting started](#getting-started)
