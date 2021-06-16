@@ -51,7 +51,7 @@ export default function FeaturesTiles({
 
   const sectionHeader = {
     title: 'We are special',
-    paragraph: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.'
+    paragraph: 'The one thing we value the most is our clients\' satisfaction. We are always there for our beloved clients'
   };
 
   return (
@@ -77,10 +77,10 @@ export default function FeaturesTiles({
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
+                    Speed
                     </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                    Unexpected guests in your office? Take care of them in no time!
                     </p>
                 </div>
               </div>
@@ -99,10 +99,10 @@ export default function FeaturesTiles({
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
+                    Efficiency
                     </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                    Functionalities and tools that will help you with the management. Everything you need, nothing you don't.
                     </p>
                 </div>
               </div>
@@ -121,10 +121,10 @@ export default function FeaturesTiles({
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
+                    Multiple locations
                     </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                    Other guest management systems are designed for organisation that has only one location. Your organisation has more than one office? We will take care of that.
                     </p>
                 </div>
               </div>
@@ -143,10 +143,10 @@ export default function FeaturesTiles({
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
+                    User-friendly interface
                     </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                    It will take no time to crack the user interface and it's bits & bobs.
                     </p>
                 </div>
               </div>
@@ -165,10 +165,10 @@ export default function FeaturesTiles({
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
+                    Extensible
                     </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                    New functionalities can be added to suit your special needs.
                     </p>
                 </div>
               </div>
@@ -187,10 +187,10 @@ export default function FeaturesTiles({
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
+                    Support
                     </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                    Our customer support team will help you with any problem you can possibly encounter.
                     </p>
                 </div>
               </div>

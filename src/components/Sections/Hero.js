@@ -114,7 +114,7 @@ export default function Hero({
                   <Button tag="a" color="primary" wideMobile href="/#">
                     Get started
                     </Button>
-                  <Button tag="a" color="dark" wideMobile href="https://github.com/brilingas/bakis">
+                  <Button tag="a" color="dark" wideMobile href="https://github.com/brilingas/guest-registry-app-front">
                     View on Github
                     </Button>
                 </ButtonGroup>
