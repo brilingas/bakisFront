@@ -129,7 +129,7 @@ export default function Header({
                     )}>
                   </ul>
                   <ButtonGroup className="list-reset header-nav-right">
-                    <Button tag="a" className="button button-primary button-wide-mobile button-sm" wideMobile href="/#">Documentation</Button>
+                    <Button tag="a" className="button button-primary button-wide-mobile button-sm" wideMobile href="https://github.com/brilingas/guest-registry-app-front">Documentation</Button>
                     <Button tag="a" className="button button-primary button-wide-mobile button-sm" wideMobile onClick={()=>setLoginModalActive(true)}> Log in </Button>
                     <Button tag="a" className="button button-primary button-wide-mobile button-sm" wideMobile onClick={() => setSignupModalActive(true)}> Sign up </Button>
                   </ButtonGroup>

@@ -1,19 +1,59 @@
-import React from 'react';
+import React, { useState} from 'react';
 import Input from './Input';
 import Button from './Button';
+import axios from 'axios';
+import {isWorkerEmpty,updateField} from '../../utils/WorkerUtils'
+
 export default function Signup(){
+    const [worker, setWorker]=useState({
+        workerId:"",
+        personId:"",
+        company:"",
+        department:"",
+        position:"",
+        dateOfEmployment:"",
+        locationOfOffice:"",
+        cardId:"",
+        workerType:""
+    });   
+
+    const handleSubmit = async (event) => {
+      event.preventDefault();   
+      if(isWorkerEmpty(worker)){
+        alert("Please fill all the fields");
+      } else{
+        const response=await axios.post(`http://localhost:8080/workers/signup`,worker)
+      console.log(response);
+      // console.log(res.data);
+      }
+    }
     return(
         <div>
-            <Input id="workerId" type="workerId" placeholder="Worker Id"/>
-            <Input id="personId" type="personId" placeholder="Person Id"/>
-            <Input id="company" type="company" placeholder="Company"/>
-            <Input id="department" type="department" placeholder="Department"/>
-            <Input id="position" type="position" placeholder="Position"/>
-            <Input id="dateOfEmployment" type="dateOfEmployment" placeholder="Date of employment"/>
-            <Input id="locationOfOffice" type="locationOfOffice" placeholder="Location of office"/>
-            <Input id="cardId" type="cardId" placeholder="Card Id"/>
-            <Input id="workerType" type="workerType" placeholder="Worker type"/>
-            <Button tag="signup" className="button button-primary button-wide-mobile button-sm" wideMobile onClick={()=>console.log("Signup")}> Sign up </Button>
+            <Input id="workerId" type="text" placeholder="Worker Id" onChange={
+             (event)=>{updateField(event,worker,setWorker)}
+              }/>
+            <Input id="personId" type="text" placeholder="Person Id" onChange={
+              (event)=>{updateField(event,worker,setWorker)}
+              }/>
+            <Input id="company" type="text" placeholder="Company" onChange={
+              (event)=>{updateField(event,worker,setWorker)}
+              }/>
+            <Input id="department" type="text" placeholder="Department" onChange={
+              (event)=>{updateField(event,worker,setWorker)}
+              }/>
+            <Input id="dateOfEmployment" type="text" placeholder="Date of employment" onChange={
+              (event)=>{updateField(event,worker,setWorker)}
+              }/>
+            <Input id="locationOfOffice" type="text" placeholder="Location of office" onChange={
+              (event)=>{updateField(event,worker,setWorker)}
+              }/>      
+            <Input id="cardId" type="text" placeholder="Card Id" onChange={
+              (event)=>{updateField(event,worker,setWorker)}
+              }/>
+            <Input id="workerType " type="text" placeholder="Worker type" onChange={
+              (event)=>{updateField(event,worker,setWorker)}
+              }/>      
+            <Button tag="signup" className="button button-primary button-wide-mobile button-sm" wideMobile onClick={handleSubmit}> Sign up </Button>
         </div>
     )
   }
