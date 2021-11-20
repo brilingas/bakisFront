@@ -37,7 +37,7 @@ Guest registry app allows you to manage your company's visitors and guests by cr
 This project is currently in development with plenty issues that need to be fixed.
 
 ## Prerequisites
-`node` and `npm`
+`node v16.13` and `npm`
 
 
 ## Getting started
