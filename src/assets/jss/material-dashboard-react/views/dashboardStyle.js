@@ -51,6 +51,7 @@ const dashboardStyle = {
   },
   cardTitle: {
     color: grayColor[2],
+    width: '100%',
     marginTop: "0px",
     minHeight: "auto",
     fontWeight: "300",

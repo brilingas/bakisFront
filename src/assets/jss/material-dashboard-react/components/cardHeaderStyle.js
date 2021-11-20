@@ -14,6 +14,8 @@ const cardHeaderStyle = {
     marginBottom: "0",
     borderBottom: "none",
     background: "transparent",
+    display: "flex",
+    flexWrap: "wrap",
     zIndex: "3 !important",
     "&$cardHeaderPlain,&$cardHeaderIcon,&$cardHeaderStats,&$warningCardHeader,&$successCardHeader,&$dangerCardHeader,&$infoCardHeader,&$primaryCardHeader,&$roseCardHeader": {
       margin: "0 15px",
