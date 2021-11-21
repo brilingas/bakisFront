@@ -4,6 +4,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import GridItem from "../../components/Grid/GridItem.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import CustomInput from "../../components/CustomInput/CustomInput.js";
+import PreviewableImageUpload from "../../components/CustomInput/PreviewableImageUpload.js";
 import Button from "../../components/CustomButtons/Button.js";
 import Card from "../../components/Poster/Poster.js";
 import CardHeader from "../../components/Poster/PosterHeader.js";
@@ -28,7 +29,19 @@ const styles = {
     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
     marginBottom: "3px",
     textDecoration: "none"
+  },
+  hiddenPlaceholder: {
+    "& > input": {
+      textIndent: "9999px"
+    },
+    "&:focus-within > input": {
+      textIndent: "0"
+    }
+  },
+  previewContainer: {
+    minHeight: "200px"
   }
+  
 };
 const useStyles = makeStyles(styles);
 const API_URL = "http://localhost:8080/persons";
@@ -39,7 +52,7 @@ export default function PersonProfile() {
     {
       name : "John",
       surname : "Doe",
-      birthday : "1955-05-19T15:16:20.201Z",
+      birthday : "",
       phoneNumber : "+555 (555) 555-5555",
       email : "john@doe.com",
       photo : [ 
@@ -80,6 +93,7 @@ export default function PersonProfile() {
                 <GridItem xs={12} sm={12} md={2}>
                   <CustomInput
                     labelText="Name"
+                    labelProps={{name: "firstName"}}
                     id="name"
                     formControlProps={{
                       fullWidth: true
@@ -90,6 +104,7 @@ export default function PersonProfile() {
                 <GridItem xs={12} sm={12} md={2}>
                   <CustomInput
                     labelText="Surname"
+                    labelProps={{name: "lastName"}}
                     id="surname"
                     formControlProps={{
                       fullWidth: true
@@ -97,9 +112,14 @@ export default function PersonProfile() {
                     onChange={(event)=> setPerson({...person, surname: event.target.value})}
                     />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={1}>
+                <GridItem xs={12} sm={12} md={3}>
+                  {/* I changed md to 3 because some of the text disappears at 2 */}
                   <CustomInput
-                    labelText="Birthday"
+                    labelText="Birth date"
+                    inputProps={{
+                      type: "date",
+                      className: person.birthday.length > 0 ? '': classes.hiddenPlaceholder
+                    }}
                     id="birthday"
                     formControlProps={{
                       fullWidth: true
@@ -110,6 +130,9 @@ export default function PersonProfile() {
                 <GridItem xs={12} sm={12} md={2}>
                   <CustomInput
                     labelText="Phone number"
+                    inputProps={{
+                      type: "tel"
+                    }}
                     id="phone-number"
                     formControlProps={{
                       fullWidth: true
@@ -117,34 +140,17 @@ export default function PersonProfile() {
                     onChange={(event)=> setPerson({...person, phoneNumber: event.target.value})}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
+                <GridItem xs={12} sm={12} md={2}>
                   <CustomInput
                     labelText="Email"
+                    inputProps={{
+                      type: "email"
+                    }}
                     id="email"
                     formControlProps={{
                       fullWidth: true
                     }}
                     onChange={(event)=> setPerson({...person, email: event.target.value})}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={1}>
-                  <CustomInput
-                    labelText="Photo"
-                    id="photo"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                    onChange={(event)=> setPerson({...person, photo: event.target.value})}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={1}>
-                  <CustomInput
-                    labelText="Signature"
-                    id="signature"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                    onChange={(event)=> setPerson({...person, signature: event.target.value})}
                   />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={1}>
@@ -155,6 +161,44 @@ export default function PersonProfile() {
                       fullWidth: true
                     }}
                     onChange={(event)=> setPerson({...person, gender: event.target.value})}
+                  />
+                </GridItem>
+
+                <GridItem xs={12} sm={12} md={6}>
+                  <PreviewableImageUpload
+                    customInputProps={{
+                      labelText:"Photo",
+                      inputProps:{
+                        type: "file",
+                        accept: "image/*",
+                        hidden: true
+                      },
+                      id: "photo",
+                      formControlProps: {
+                        fullWidth: true
+                      },
+                      onChange: (event)=> setPerson({...person, photo: event.target.value})
+
+                    }}
+
+                  />
+
+                </GridItem>
+                <GridItem xs={12} sm={12} md={6}>
+                  <PreviewableImageUpload
+                    customInputProps={{
+                      labelText: "Signature",
+                      inputProps: {
+                        type: "file",
+                        accept: "image/*",
+                        hidden: true
+                      },
+                      id: "signature",
+                      formControlProps: {
+                        fullWidth: true
+                      },
+                      onChange: (event)=> setPerson({...person, signature: event.target.value})
+                    }}
                   />
                 </GridItem>
                 <GridContainer>
@@ -207,7 +251,7 @@ export default function PersonProfile() {
                             </GridItem>
                             <GridItem xs={12} sm={12} md={2}>
                               <CustomInput
-                                labelText="Apartment number"
+                                labelText="Apt. number"
                                 id="apartment-number"
                                 formControlProps={{
                                   fullWidth: true
