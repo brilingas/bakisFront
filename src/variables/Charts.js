@@ -6,14 +6,16 @@ var delays2 = 80,
 const dailySalesChart = {
   data: {
     labels: ["M", "T", "W", "T", "F", "S", "S"],
-    series: [[12, 17, 7, 17, 23, 18, 38]]
+    series: [[12, 17, 7, 17, 23, 18, 38]],
   },
   options: {
     lineSmooth: Chartist.Interpolation.cardinal({
-      tension: 0
-    }),
+     tension: 1
+   }),
     low: 0,
     high: 50,
+    showLine: false,
+    showArea: true,
     chartPadding: {
       top: 0,
       right: 0,
@@ -118,10 +120,12 @@ const completedTasksChart = {
   },
   options: {
     lineSmooth: Chartist.Interpolation.cardinal({
-      tension: 0
+      tension: 50
     }),
     low: 0,
     high: 1000,
+    showLine: false,
+    showArea: true,
     chartPadding: {
       top: 0,
       right: 0,

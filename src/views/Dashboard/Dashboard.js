@@ -176,7 +176,7 @@ export default function Dashboard() {
         </GridItem>
       </GridContainer>
       <GridContainer>
-        <GridItem xs={12} sm={12} md={4}>
+        <GridItem xs={12} sm={12} md={6} lg={4}>
           <Card chart>
             <CardHeader color="success">
               <ChartistGraph
@@ -203,10 +203,11 @@ export default function Dashboard() {
             </CardFooter>
           </Card>
         </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
+        <GridItem xs={12} sm={12} md={6} lg={4}>
           <Card chart>
             <CardHeader color="warning">
               <ChartistGraph
+                style={{fontSize: "0.7em"}}
                 className="ct-chart"
                 data={emailsSubscriptionChart.data}
                 type="Bar"
@@ -226,10 +227,11 @@ export default function Dashboard() {
             </CardFooter>
           </Card>
         </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
+        <GridItem xs={12} sm={12} md={12} lg={4}>
           <Card chart>
             <CardHeader color="danger">
               <ChartistGraph
+                style={{fontSize: "0.7em"}}
                 className="ct-chart"
                 data={completedTasksChart.data}
                 type="Line"
