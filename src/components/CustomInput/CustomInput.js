@@ -39,6 +39,7 @@ export default function CustomInput({formControlProps,
   const marginTop = classNames({
     [classes.marginTop]: labelText === undefined
   });
+
   return (
     <FormControl
       {...formControlProps}
